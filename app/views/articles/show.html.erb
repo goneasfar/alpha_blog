@@ -11,4 +11,5 @@
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure? This cannot be reversed...' } %> |
 <%= link_to 'Back', articles_path %>
