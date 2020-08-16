@@ -1,0 +1,50 @@
+@import "bootstrap/scss/bootstrap";
+
+.navbar{
+  background-color: black !important;
+}
+.nav-link{
+  color: white !important;
+}
+#logo{
+  float: left;
+  font-size: 1.7em;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.navbar-toggler-icon{
+  color: white !important;
+}
+#jumbo-home{
+  margin: 20px;
+  padding: 15%;
+  background-image: asset_url('typewriter.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html,
+body{
+  width: 100%;
+  margin: 0;
+}
+
+#page-content{
+  flex: 1 0 auto;
+  background-color: lightgray;
+}
+
+#sticky-footer{
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 5%;
+  background: #F37A1D;
+}
