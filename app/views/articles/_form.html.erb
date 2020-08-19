@@ -1,27 +1,39 @@
-<%= form_with(model: article, local: true) do |form| %>
-  <% if article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+  <%= form_with(model: article, class: "shadow p-3 bg-info rounded", local: true) do |form| %>
+    <% if article.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
 
-      <ul>
-        <% article.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% article.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+      <div class="field form-group row">
+        <%= form.label :title, class: "col-2 col-form-label text-light" %>
+        <div class="col-8">
+          <%= form.text_field :title, class: "form-control shadow rounded", placeholder: "Title of Article" %>
+        </div>
+      </div>
+
+      <div class="field form-group row">
+        <%= form.label :description, class: "col-2 col-form-label text-light" %>
+        <div class="col-8">
+        <%= form.text_area :description, rows: 10, class: "form-control shadow rounded", placeholder: "Description of Article" %>
+        </div>
+      </div>
+
+      <div class="actions form-group row justify-content-center">
+        <%= form.submit class: "btn btn-outline-light btn-lg" %>
+      </div>
+    <% end %>
+      <div class: "form-group-row justify-content-center">
+    <%= link_to '[ Back ]', articles_path, class: "text-info"%>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
