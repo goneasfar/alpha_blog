@@ -2,17 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-10">
   <%= form_with(model: article, class: "shadow p-3 bg-info rounded", local: true) do |form| %>
-    <% if article.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-        <ul>
-          <% article.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <%= render 'shared/errors' %>
       <div class="field form-group row">
         <%= form.label :title, class: "col-2 col-form-label text-light" %>
         <div class="col-8">
