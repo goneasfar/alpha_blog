@@ -17,10 +17,6 @@
               <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-info", id: "show-article"%>
               <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure? This cannot be reversed...' }, class: "btn btn-outline-danger", id: "destroy-article"%>
             </div>
-            <div class="card-footer text-muted">
-              <small>Created <%= time_ago_in_words(article.created_at) %> ago,
-              edited <%= time_ago_in_words(article.updated_at) %></small>
-            </div>
           </div>
         </div>
       </div>
